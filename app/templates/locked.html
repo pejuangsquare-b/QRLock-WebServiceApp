@@ -1,0 +1,61 @@
+    <script src="{{ url_for('static', filename='jquery.qrcode-0.11.0.js') }}"></script>
+    <script src="{{ url_for('static', filename='ff-range.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts.js') }}"></script>
+        <h5>Scan the Code to Unlock the Door!</h5>
+      <h4>
+        <span class="label label-success">Status : Door Locked</span>
+      </h4>
+    <div type="hidden" id="container"></div>
+    <div type="hidden" class="control left">
+        <!-- <label for="render">RENDER MODE</label> -->
+        <input type="hidden" id="render" value="image" />
+            <!-- <option value="image" selected="selected">Canvas</option>
+            <option value="image">Image</option>
+            <option value="image">DIV</option>
+            </select> -->
+       <!--  <label for="size">SIZE:</label> -->
+        <input type="hidden" id="size" type="range" value="180" />
+        <!-- <label for="fill">FILL</label> -->
+        <input type="hidden" id="fill" type="color" value="#333333" />
+        <!-- <label for="background">BACKGROUND</label> -->
+        <input type="hidden" id="background" type="color" value="#ffffff" />
+        <!-- <label for="text">CONTENT</label> -->
+        <input type="hidden" id="text" value="{{ gen_code }}" />
+        <!-- <label for="minversion">MIN VERSION:</label> -->
+        <input type="hidden" id="minversion" type="range" value="6" min="1" max="10" step="1" />
+        <!-- <label for="eclevel">ERROR CORRECTION LEVEL</label> -->
+        <input type="hidden" id="eclevel" value="H"/>
+            <!-- <option value="L">L - Low (7%)</option>
+            <option value="M">M - Medium (15%)</option>
+            <option value="Q">Q - Quartile (25%)</option>
+            <option value="H" selected="selected">H - High (30%)</option> -->
+        <!-- <label for="quiet">QUIET ZONE:</label> -->
+        <input type="hidden" id="quiet" type="range" value="1" min="0" max="4" step="1" />
+        <!-- <label for="radius">CORNER RADIUS (not in Opera):</label> -->
+        <input type="hidden" id="radius" type="range" value="50" min="0" max="50" step="10" />
+    </div>
+
+    <div class="control right">
+        <input type="hidden" id="mode" value="2" />
+            <!-- <option value="0">0 - Normal</option>
+            <option value="1">1 - Label-Strip</option>
+            <option value="2" selected="selected">2 - Label-Box</option>
+            <option value="3">3 - Image-Strip</option>
+            <option value="4">4 - Image-Box</option> -->
+        <!-- <label for="msize">SIZE:</label> -->
+        <input type="hidden" id="msize" type="range" value="11" min="0" max="40" step="1" />
+        <!-- <label for="mposx">POS X:</label> -->
+        <input type="hidden" id="mposx" type="range" value="50" min="0" max="100" step="1" />
+        <!-- <label for="mposy">POS Y:</label> -->
+        <input type="hidden" id="mposy" type="range" value="50" min="0" max="100" step="1" />
+        <!-- <label for="label">LABEL</label> -->
+        <input type="hidden" id="label" type="text" value="QRlock" />
+        <!-- <label for="font">FONT NAME</label> -->
+        <input type="hidden" id="font" type="text" value="Ubuntu" />
+        <!-- <label for="fontcolor">FONT COLOR:</label> -->
+        <input type="hidden" id="fontcolor" type="color" value="#ff9818" />
+        <!-- <label for="image">IMAGE</label> -->
+        <input type="hidden" id="image" type="file" />
+    </div>
+
+    <img id="img-buffer" src="dummy.png" />

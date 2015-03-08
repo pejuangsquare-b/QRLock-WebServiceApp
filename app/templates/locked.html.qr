@@ -1,0 +1,5 @@
+<span class="label label-success"> Scan QRCode Below </span>
+
+<div class="thumbnail">
+	<img src="{{ qrcode(gen_code) }}">
+</div>
